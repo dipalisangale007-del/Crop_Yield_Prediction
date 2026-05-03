@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Basic resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #56ab2f, #a8e063); /* Gradient background */
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Hero section */
+        .hero-section {
+            width: 100%;
+            height: 100%;
+            background: url("https://images.unsplash.com/photo-1598403273953-9f6bb3f7d67b?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjU2OXwwfDF8c2VhcmNofDJ8fGZlcnRpY2lsZ2lmb3x8ZW58MHx8fHwxNjY5MTg2Nzk2&ixlib=rb-1.2.1&q=80") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6); /* Darken background to enhance readability */
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 700px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Title */
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            text-transform: uppercase;
+        }
+
+        /* Description */
+        p {
+            font-size: 1.6em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #f1f1f1;
+        }
+
+        /* Button */
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        .btn:active {
+            transform: scale(0.98); /* Button press effect */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.3em;
+            }
+
+            .btn {
+                font-size: 1.3em;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Crop Yield Prediction</h1>
+            <p>Use this platform to predict crop yield based on various parameters.</p>
+            <a href="/user_input" class="btn">Start Prediction</a>
+        </div>
+    </header>
+
+</body>
+</html>

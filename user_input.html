@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Crop Parameters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form action="/predict" method="POST">
+        <h2>Enter Parameters for Prediction</h2>
+        <label for="crop_type">Crop Type:</label>
+        <select id="crop_type" name="crop_type">
+            <option value="Wheat">Wheat</option>
+            <option value="Rice">Rice</option>
+            <option value="Maize">Maize</option>
+        </select><br>
+
+        <label for="soil_type">Soil Type:</label>
+        <select id="soil_type" name="soil_type">
+            <option value="Clay">Clay</option>
+            <option value="Loam">Loam</option>
+            <option value="Sandy">Sandy</option>
+        </select><br>
+
+        <label for="rainfall">Average Rainfall (mm):</label>
+        <input type="text" id="rainfall" name="rainfall" required><br>
+
+        <label for="temperature">Average Temperature (°C):</label>
+        <input type="text" id="temperature" name="temperature" required><br>
+
+        <label for="humidity">Humidity (%):</label>
+        <input type="text" id="humidity" name="humidity" required><br>
+
+        <label for="nitrogen">Nitrogen (ppm):</label>
+        <input type="text" id="nitrogen" name="nitrogen" required><br>
+
+        <label for="phosphorus">Phosphorus (ppm):</label>
+        <input type="text" id="phosphorus" name="phosphorus" required><br>
+
+        <label for="potassium">Potassium (ppm):</label>
+        <input type="text" id="potassium" name="potassium" required><br>
+
+        <label for="sowing_month">Sowing Month:</label>
+        <select id="sowing_month" name="sowing_month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+        </select><br>
+
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required><br><br>
+
+        <button type="submit" class="btn">Predict Yield</button>
+    </form>
+</body>
+</html>

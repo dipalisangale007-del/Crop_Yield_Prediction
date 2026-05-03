@@ -1,0 +1,237 @@
+/* ---------------- BASIC STYLES ---------------- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+    background-color: #0a0a0a;
+}
+
+/* ---------------- BACKGROUND ---------------- */
+.background {
+    background: linear-gradient(rgba(0, 100, 0, 0.4), rgba(0, 50, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1576765607924-11284f1e2cf7') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* ---------------- CONTAINER ---------------- */
+.container {
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+    text-align: center;
+}
+
+/* ---------------- FORM BOX ---------------- */
+.form-box {
+    background: rgba(255, 255, 255, 0.05);
+    width: 400px;
+    margin: 100px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    animation: fadeIn 1s ease;
+}
+
+/* ---------------- BUTTON ---------------- */
+.button, input[type="submit"], .btn {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #28a745, #218838);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover, input[type="submit"]:hover, .btn:hover {
+    background: linear-gradient(45deg, #218838, #28a745);
+    transform: scale(1.05);
+}
+
+.button.red {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+}
+
+.button.red:hover {
+    background: linear-gradient(45deg, #c82333, #dc3545);
+}
+
+/* ---------------- BUTTON GROUP (NEW) ---------------- */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* ---------------- INPUT FIELDS ---------------- */
+input[type="text"], input[type="number"], input[type="password"], textarea {
+    width: 90%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="password"]:focus, textarea:focus {
+    background-color: #e0ffe0;
+    outline: none;
+    box-shadow: 0 0 5px #28a745;
+}
+
+/* ---------------- HEADINGS ---------------- */
+h1, h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #a5e1ad;
+    text-shadow: 1px 1px 3px black;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+/* ---------------- CARD AND RESULT ---------------- */
+.card, .result {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    margin: 20px auto;
+    width: 85%;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    color: #eee;
+}
+
+.card p {
+    color: #bbb;
+}
+
+.result {
+    background: linear-gradient(135deg, rgba(0, 128, 0, 0.7), rgba(0, 100, 0, 0.7));
+}
+
+.result p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #f1f8f1;
+}
+
+.result p strong {
+    color: #FFD700;
+}
+
+/* ---------------- RESULT CONTAINER ---------------- */
+.result-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.result-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #a5e1ad;
+    font-weight: bold;
+}
+
+/* ---------------- RESULT CARD ---------------- */
+.result-card {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.result-card p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #e0f2f1;
+}
+
+.result-card strong {
+    color: #81c784;
+}
+
+/* ---------------- BACK BUTTON ---------------- */
+.back-button {
+    margin-top: 20px;
+}
+
+.back-button .btn {
+    background: linear-gradient(45deg, #4caf50, #388e3c);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.back-button .btn:hover {
+    background: linear-gradient(45deg, #388e3c, #4caf50);
+    transform: scale(1.05);
+}
+
+/* ---------------- FADE IN ANIMATION ---------------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ---------------- MOBILE FRIENDLY ---------------- */
+@media (max-width: 768px) {
+    .form-box {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .result-container {
+        padding: 25px;
+        width: 95%;
+        margin: 40px auto;
+    }
+
+    .result-card {
+        padding: 20px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

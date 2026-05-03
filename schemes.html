@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Schemes 📰</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Basic resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("https://images.unsplash.com/photo-1605600463125-1b3f62b6ff2b?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjU2OXwwfDF8c2VhcmNofDJ8fGZlcnRpY2lsZ2lmb3x8ZW58MHx8fHwxNjY5MTg2Nzk2&ixlib=rb-1.2.1&q=80") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+        }
+
+        /* Container for schemes */
+        .container {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #90ee90;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        /* Button for adding a new scheme */
+        .add-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 40px auto;
+            padding: 12px 25px;
+            background: #28a745;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .add-button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+
+        /* Card layout for each scheme */
+        .card {
+            background: rgba(0, 128, 0, 0.8);
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h3 {
+            font-size: 1.8em;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #f1f1f1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2em;
+            }
+
+            .card h3 {
+                font-size: 1.5em;
+            }
+
+            .card p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body class="background">
+    <div class="container">
+        <h2>Latest Schemes for Farmers 📢</h2>
+
+        <!-- Add Scheme Button -->
+        <a href="{{ url_for('add_scheme') }}" class="add-button">➕ Add New Scheme</a>
+
+        {% if schemes %}
+            {% for scheme in schemes %}
+                <div class="card">
+                    <h3>{{ scheme[0] }}</h3>
+                    <p>{{ scheme[1] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center; margin-top: 20px;">No schemes available at the moment.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

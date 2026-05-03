@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="../static/style.css"> 
+    <style>
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #e0ffe0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: linear-gradient(45deg, #28a745, #218838);
+            color: #fff;
+            font-size: 18px;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Button Group */
+        .btn-group {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #ccc;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="background">
+    <div class="container">
+        <h1>Prediction History</h1>
+
+        {% if not data %}
+            <div class="result" style="background: rgba(220, 53, 69, 0.8);">
+                <p>No prediction history found. Please make a prediction first.</p>
+            </div>
+        {% else %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rainfall (mm)</th>
+                        <th>Temperature (°C)</th>
+                        <th>Humidity (%)</th>
+                        <th>Soil pH</th>
+                        <th>Soil Moisture (%)</th>
+                        <th>Fertilizer Usage (kg/ha)</th>
+                        <th>Current Crop</th>
+                        <th>Land Area (acres)</th>
+                        <th>Predicted Yield (kg)</th>
+                        <th>Suggested Crop</th>
+                        <th>Prediction Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in data %}
+                        <tr>
+                            <td>{{ record[1] }}</td>
+                            <td>{{ record[2] }}</td>
+                            <td>{{ record[3] }}</td>
+                            <td>{{ record[4] }}</td>
+                            <td>{{ record[5] }}</td>
+                            <td>{{ record[6] }}</td>
+                            <td>{{ record[7] }}</td>
+                            <td>{{ record[8] }}</td>
+                            <td>{{ record[9] }}</td>
+                            <td>{{ record[10] }}</td>
+                            <td>{{ record[11] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        <div class="btn-group">
+            <a href="{{ url_for('predict') }}" class="button">Predict Again</a>
+            <a href="{{ url_for('download') }}" class="button">Download PDF</a>  <!-- Fixed the endpoint -->
+            <a href="{{ url_for('history') }}" class="button red" onclick="return confirm('Are you sure you want to clear all history?');">Clear History</a>
+        </div>
+
+        <footer>
+            <p>© 2025 Crop Yield Prediction System</p>
+        </footer>
+    </div>
+</body>
+</html>

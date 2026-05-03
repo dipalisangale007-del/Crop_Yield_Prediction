@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Crop Bot 🌾🤖 | Chat Assistant</title>
+    <style>
+        /* General resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("https://images.unsplash.com/photo-1576765607924-11284f1e2cf7") no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Dark overlay for better text readability */
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Chat container */
+        .chat-box {
+            width: 90%;
+            max-width: 450px;
+            padding: 35px 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            animation: slideUp 1.2s ease;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00ff99;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 14px 18px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            color: #333;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            background: linear-gradient(45deg, #28a745, #218838);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background: linear-gradient(45deg, #218838, #1e7e34);
+            transform: scale(1.05);
+        }
+
+        .response-box {
+            margin-top: 25px;
+            background: rgba(40, 167, 69, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .chat-box {
+                padding: 25px 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="chat-box">
+        <h2>Talk to Crop Bot 🤖</h2>
+        <form method="POST">
+            <input type="text" name="question" placeholder="Ask about crops, weather, fertilizers..." required><br>
+            <input type="submit" value="Get Answer">
+        </form>
+
+        <!-- Show chatbot response -->
+        {% if answer %}
+            <div class="response-box">
+                <p><strong>Answer:</strong> {{ answer }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

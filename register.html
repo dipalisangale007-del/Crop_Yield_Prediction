@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Crop Yield Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("https://www.bing.com/images/search?view=detailV2&ccid=QqS2s2sE&id=4F904643C9DB42980C9D1E1F16B49AFFC4AD64B4&thid=OIP.QqS2s2sEMTPklixZYMdYiwHaEo&mediaurl=https%3a%2f%2fwallpaperaccess.com%2ffull%2f3543885.jpg&exph=1800&expw=2880&q=crop+image&simid=607996374636058753&FORM=IRPRST&ck=BF9734848C9BC23E5255011C8EB0C9C4&selectedIndex=8&itb=0&ajaxhist=0&ajaxserp=0") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .register-box {
+      width: 350px;
+      padding: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      border-radius: 15px;
+      color: #fff;
+    }
+
+    .register-box h2 {
+      margin-bottom: 30px;
+    }
+
+    .register-box input[type="text"],
+    .register-box input[type="password"] {
+      border: none;
+      outline: none;
+      padding: 12px;
+      width: 100%;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .register-box input[type="submit"] {
+      border: none;
+      outline: none;
+      padding: 12px;
+      width: 100%;
+      background: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .register-box input[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    .login-link {
+      margin-top: 20px;
+      display: block;
+      color: #fff;
+    }
+
+    .login-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-box">
+    <h2>Create an Account</h2>
+    <form method="POST">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <input type="submit" value="Register">
+    </form>
+    <a class="login-link" href="/login">Already have an account? Login here</a>
+  </div>
+</body>
+</html>
